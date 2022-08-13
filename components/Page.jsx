@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { getPages } from '../services';
 
-const Categories = () => {
+const Pages = () => {
   const [pages, setPages] = useState([]);
 
   useEffect(() => {
