@@ -8,7 +8,7 @@ const Categories = () => {
 
   useEffect(() => {
     getPages().then((newPages) => {
-      SetPages(newPages);
+      setPages(newPages);
     });
   }, []);
 
