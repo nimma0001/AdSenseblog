@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import { getPages } from '../../services';
-import { PostCard, Page, Loader } from '../../components';
+import { PostCard, Pages, Loader } from '../../components';
 
 const PagePost = ({ posts }) => {
   const router = useRouter();
