@@ -57,7 +57,7 @@ export const getCategories = async () => {
 export const getPages = async () => {
   const query = gql`
     query GetPages {
-        categories {
+        pages {
           name
           slug
         }
