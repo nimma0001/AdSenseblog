@@ -54,6 +54,22 @@ export const getCategories = async () => {
   return result.categories;
 };
 
+export const getPages = async () => {
+  const query = gql`
+    query GetPages {
+        categories {
+          name
+          slug
+        }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.pages;
+};
+
+
 export const getPostDetails = async (slug) => {
   const query = gql`
     query GetPostDetails($slug : String!) {
