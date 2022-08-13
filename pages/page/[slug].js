@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { getPage } from '../../services';
 import { PostCard, Page, Loader } from '../../components';
 
-const CategoryPost = ({ posts }) => {
+const PagePost = ({ posts }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -34,9 +34,9 @@ export default PagePost;
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths() {
-  const categories = await getPage();
+  const pages = await getPage();
   return {
-    paths: categories.map(({ slug }) => ({ params: { slug } })),
+    paths: pages.map(({ slug }) => ({ params: { slug } })),
     fallback: true,
   };
 }
