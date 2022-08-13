@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getPage } from '../../services';
+import { getPages } from '../../services';
 import { PostCard, Page, Loader } from '../../components';
 
 const PagePost = ({ posts }) => {
