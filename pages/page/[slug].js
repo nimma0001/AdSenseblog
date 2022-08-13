@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import { getPage, getPagePost } from '../../services';
+import { getPage } from '../../services';
 import { PostCard, Page, Loader } from '../../components';
 
 const CategoryPost = ({ posts }) => {
@@ -21,7 +21,7 @@ const CategoryPost = ({ posts }) => {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
-            <Categories />
+            <Pages />
           </div>
         </div>
       </div>
@@ -30,14 +30,6 @@ const CategoryPost = ({ posts }) => {
 };
 export default PagePost;
 
-// Fetch data at build time
-export async function getStaticProps({ params }) {
-  const posts = await getPagePost(params.slug);
-
-  return {
-    props: { posts },
-  };
-}
 
 // Specify dynamic routes to pre-render pages based on data.
 // The HTML is generated at build time and will be reused on each request.
